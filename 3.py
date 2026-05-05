@@ -1,0 +1,22 @@
+from random import randint
+
+students = ["Дубов", "Пушкин", "Жегалин"]
+subjects = ["Мат. Анализ", "Лин. Алгебра", "ТВиМС"]
+dates = ["02.03.2026", "03.03.2026", "04.03.2026", "05.03.2026"]
+
+
+print('Все комбинации:')
+for i in subjects:
+    for j in students:
+        for k in dates:
+            for l in range(2, 6):
+                print(i, j, k, l)
+
+
+selected_student = int(input(f'{list(enumerate(students))}\nВыберите студента (номер): '))
+
+print('Предмет', 'Фамилия', 'Дата', 'Оценка')
+
+for i in subjects:
+    for k in dates:
+        print(i, students[selected_student], k, randint(2, 5))
